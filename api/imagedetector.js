@@ -5,7 +5,8 @@ const router = express.Router();
 
 const config = {
     headers: {
-        'Authorization': `Key ${process.env.CLARIFAI_API_KEY}`
+        'Authorization': `Key ${process.env.CLARIFAI_API_KEY}`,
+        'Content-Type': 'application/json'
     }
 };
 
