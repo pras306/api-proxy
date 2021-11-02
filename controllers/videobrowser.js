@@ -2,8 +2,16 @@ const express = require("express");
 const axios = require("axios").default;
 
 const router = express.Router();
+const error = new Error();
 
-const getVideos = async (term) => {
+
+router.get("/", (req, res) => {
+    res.json({ success: "Welcome to Video Browser Endpoint"});
+});
+
+router.get("/:term", async (req, res, next) => {
+    const term = req.params.term;
+
     const url = "https://www.googleapis.com/youtube/v3/search";
     const config = {
         params: {
@@ -17,22 +25,13 @@ const getVideos = async (term) => {
 
     try {
         const response = await axios.get(url, config);
-        return response.data.items;
+        return res.json(response.data.items);
 
     } catch (err) {
-        return { Error: err.stack }
+        error.message = 'Unable to get requested data. Please try again.';
+        error.status = 400;
+        next(error);
     }
-}
-
-
-router.get("/", (req, res) => {
-    res.json({ success: "Hello Video Browser App "});
-});
-
-router.get("/:term", async (req, res) => {
-    const term = req.params.term;
-    const data = await getVideos(term);
-    res.json(data);
 });
 
 

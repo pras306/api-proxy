@@ -2,8 +2,15 @@ const express = require("express");
 const axios = require("axios").default;
 
 const router = express.Router();
+const error = new Error();
 
-const getImages = async (term) => {
+router.get("/", (req, res) => {
+    res.json({success: "Welcome to Image Search Endpoint"});
+});
+
+router.get("/:term", async (req, res, next) => {
+    const term = req.params.term;
+
     const url = "https://api.unsplash.com/search/photos";
     const config = {
         headers: { Authorization : `Client-ID ${process.env.UNSPLASH_API_KEY}` },
@@ -16,21 +23,13 @@ const getImages = async (term) => {
 
     try {
         const response = await axios.get(url, config);        
-        return response.data.results;
+        return res.json(response.data.results);
 
     } catch (err) {
-        return { Error: err.stack }
+        error.message = 'Unable to get requested data. Please try again.';
+        error.status = 400;
+        next(error);
     }
-}
-
-router.get("/", (req, res) => {
-    res.json({success: "Hello Image Search API"});
-});
-
-router.get("/:term", async (req, res) => {
-    const term = req.params.term;
-    const data = await getImages(term);
-    res.json(data);
 });
 
 
