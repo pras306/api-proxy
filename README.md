@@ -54,6 +54,8 @@ Start the server
   node server.js
 ```
 
+[Back To The Top](#api-proxy-server)
+
 ---
 
 ## API References
@@ -126,6 +128,8 @@ Production Base URL - [https://backend-portfolio-proxy.herokuapp.com/api/v1](htt
 | :---------- | :------- | :------------------------------------------------ |
 | `request    | `string` | **Required**. the genre of movies to fetch        |
 
+
+[Back To The Top](#api-proxy-server)
 
 ---
 
