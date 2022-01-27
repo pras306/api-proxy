@@ -64,6 +64,8 @@ Start the server
 - [Youtube API](https://developers.google.com/youtube/v3)
 - [Clarifai API](https://www.clarifai.com/)
 - [Unsplash API](https://unsplash.com/)
+- [Travel Advisor Rapid API](https://rapidapi.com/apidojo/api/travel-advisor/)
+- [Open Weather Map Rapid API](https://rapidapi.com/community/api/open-weather-map/)
 
 
 [Back To The Top](#api-proxy-server)
@@ -126,7 +128,34 @@ Production Base URL - [https://backend-portfolio-proxy.herokuapp.com/api/v1](htt
 
 | Parameter   | Type     | Description                                       |
 | :---------- | :------- | :------------------------------------------------ |
-| `request    | `string` | **Required**. the genre of movies to fetch        |
+| `request`    | `string` | **Required**. the genre of movies to fetch       |
+
+
+#### GET place details
+
+```http
+  GET /traveladvisor/place?list_option=${list_option}&bl_latitude=${bl_latitude}&tr_latitude=${tr_latitude}&bl_longitude=${bl_longitude}&tr_longitude=${tr_longitude}
+```
+
+| Parameter        | Type     | Description                                                                         |
+| :----------      | :------- | :---------------------------------------------------------------------------------- |
+| `list_option`    | `string` | **Required**. can be one of three place type - Restaurants, Hotels and Attractions  |
+| `bl_latitude`    | `number` | **Required**. latitude value of bottom left boundary in google maps                 |
+| `tr_latitude`    | `number` | **Required**. latitude value of top right boundary in google maps                   |
+| `bl_longitude`   | `number` | **Required**. longitude value of bottom left boundary in google maps                |
+| `tr_longitude`   | `number` | **Required**. longitude value of top right boundary in google maps                  |
+
+
+#### GET weather
+
+```http
+  GET /openweather/find?lat=${lat}&lng=${lng}
+```
+
+| Parameter   | Type     | Description                                       |
+| :---------- | :------- | :------------------------------------------------ |
+| `lat`       | `number` | **Required**. the latitude value of the place     |
+| `lng`       | `number` | **Required**. the longitude value of the place    |
 
 
 [Back To The Top](#api-proxy-server)
