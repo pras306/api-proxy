@@ -66,6 +66,8 @@ Start the server
 - [Unsplash API](https://unsplash.com/)
 - [Travel Advisor Rapid API](https://rapidapi.com/apidojo/api/travel-advisor/)
 - [Open Weather Map Rapid API](https://rapidapi.com/community/api/open-weather-map/)
+- [Coinranking Rapid API](https://rapidapi.com/Coinranking/api/coinranking1)
+- [Bing News Search Rapid API](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1)
 
 
 [Back To The Top](#api-proxy-server)
@@ -156,6 +158,61 @@ Production Base URL - [https://backend-portfolio-proxy.herokuapp.com/api/v1](htt
 | :---------- | :------- | :------------------------------------------------ |
 | `lat`       | `number` | **Required**. the latitude value of the place     |
 | `lng`       | `number` | **Required**. the longitude value of the place    |
+
+
+[Back To The Top](#api-proxy-server)
+
+
+#### GET coins
+
+```http
+  GET /coinranking/coins?limit=${limit}
+```
+
+| Parameter   | Type     | Description                                                  |
+| :---------- | :------- | :----------------------------------------------------------- |
+| `limit`     | `number` | **Required**. the limit for different crypto coins           |
+
+
+[Back To The Top](#api-proxy-server)
+
+
+#### GET coin
+
+```http
+  GET /coinranking/coin/${coinId}
+```
+
+| Parameter   | Type     | Description                                                  |
+| :---------- | :------- | :----------------------------------------------------------- |
+| `coinId`    | `number` | **Required**. the UUID of the coin you want to request       |
+
+
+[Back To The Top](#api-proxy-server)
+
+
+#### GET coin price history
+
+```http
+  GET /coinranking/coin/${coinId}/history?timePeriod=${timePeriod}
+```
+
+| Parameter    | Type     | Description                                                        |
+| :----------  | :------- | :----------------------------------------------------------------- |
+| `coinId`     | `number` | **Required**. the UUID of the coin you want to request             |
+| `timePeriod` | `number` | **Required**. Timeperiod where the change and history are based on |
+
+
+#### GET news search
+
+```http
+  GET /bingnewssearch/news/search?q=${searchTerm}&count=${count}
+```
+
+| Parameter     | Type     | Description                                                      |
+| :-----------  | :------- | :--------------------------------------------------------------- |
+| `searchTerm`  | `string` | **Required**. the query string for user's search                 |
+| `count`       | `number` | **Required**. the number of news articles to return in search    |
 
 
 [Back To The Top](#api-proxy-server)
