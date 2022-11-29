@@ -28,7 +28,7 @@ This is a API Proxy Server where all my other API keys are hidden
 
 ## How To Use
 
-The API Entry point is [API Proxy Server](https://backend-portfolio-proxy.herokuapp.com/api/v1)
+The API Entry point is [API Proxy Server](https://api-proxy-server.up.railway.app/api/v1)
 
 Clone the project 
 
@@ -76,7 +76,7 @@ Start the server
 
 ## API Routes
 
-Production Base URL - [https://backend-portfolio-proxy.herokuapp.com/api/v1](https://backend-portfolio-proxy.herokuapp.com/api/v1)
+Production Base URL - [https://api-proxy-server.up.railway.app/api/v1](https://api-proxy-server.up.railway.app/api/v1)
 
 #### GET images
 
