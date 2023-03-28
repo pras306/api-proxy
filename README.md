@@ -76,7 +76,7 @@ Start the server
 
 ## API Routes
 
-Production Base URL - [https://api-proxy-server.up.railway.app/api/v1](https://api-proxy-server.up.railway.app/api/v1)
+Production Base URL - [https://api-proxy-server-6xbe.onrender.com/api/v1](https://api-proxy-server-6xbe.onrender.com/api/v1)
 
 #### GET images
 
