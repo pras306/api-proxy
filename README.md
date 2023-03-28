@@ -28,7 +28,7 @@ This is a API Proxy Server where all my other API keys are hidden
 
 ## How To Use
 
-The API Entry point is [API Proxy Server](https://api-proxy-server.up.railway.app/api/v1)
+The API Entry point is [API Proxy Server](https://api-proxy-server-6xbe.onrender.com/api/v1)
 
 Clone the project 
 
