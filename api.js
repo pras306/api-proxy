@@ -10,6 +10,7 @@ const traveladvisor = require("./controllers/traveladvisor");
 const openweather = require("./controllers/openweather");
 const coinranking = require("./controllers/coinranking");
 const bingnewssearch = require("./controllers/bingnewssearch");
+const stripePayments = require("./controllers/stripe");
 
 router.get("/", (req, res) => {
     res.json({ success: "Welcome to Proxy Server API Home" });
@@ -23,6 +24,7 @@ router.use('/traveladvisor', traveladvisor);
 router.use('/openweather', openweather);
 router.use('/coinranking', coinranking);
 router.use('/bingnewssearch', bingnewssearch);
+router.use('/stripe', stripePayments);
 
 module.exports = router;
 
