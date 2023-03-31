@@ -68,6 +68,7 @@ Start the server
 - [Open Weather Map Rapid API](https://rapidapi.com/community/api/open-weather-map/)
 - [Coinranking Rapid API](https://rapidapi.com/Coinranking/api/coinranking1)
 - [Bing News Search Rapid API](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1)
+- [Stripe API](https://stripe.com/docs/api)
 
 
 [Back To The Top](#api-proxy-server)
@@ -213,6 +214,17 @@ Production Base URL - [https://api-proxy-server-6xbe.onrender.com/api/v1](https:
 | :-----------  | :------- | :--------------------------------------------------------------- |
 | `searchTerm`  | `string` | **Required**. the query string for user's search                 |
 | `count`       | `number` | **Required**. the number of news articles to return in search    |
+
+
+#### POST - Create Stripe Payment Intent
+
+```http
+  POST /stripe/create-payment-intent
+```
+
+|Request Body | Type     | Description                                        |
+| :---------- | :------- | :------------------------------------------------- |
+| `cartItems` | `array`  | **Required**. an array of all the products in cart |
 
 
 [Back To The Top](#api-proxy-server)
