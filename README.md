@@ -69,6 +69,9 @@ Start the server
 - [Coinranking Rapid API](https://rapidapi.com/Coinranking/api/coinranking1)
 - [Bing News Search Rapid API](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1)
 - [Stripe API](https://stripe.com/docs/api)
+- [Spotify API](https://rapidapi.com/airaudoeduardo/api/spotify81)
+- [Spotify Scraper API](https://rapidapi.com/DataFanatic/api/spotify-scraper)
+- [Spotify API](https://rapidapi.com/Glavier/api/spotify23)
 
 
 [Back To The Top](#api-proxy-server)
@@ -203,6 +206,8 @@ Production Base URL - [https://api-proxy-server-6xbe.onrender.com/api/v1](https:
 | `coinId`     | `number` | **Required**. the UUID of the coin you want to request             |
 | `timePeriod` | `number` | **Required**. Timeperiod where the change and history are based on |
 
+[Back To The Top](#api-proxy-server)
+
 
 #### GET news search
 
@@ -214,6 +219,9 @@ Production Base URL - [https://api-proxy-server-6xbe.onrender.com/api/v1](https:
 | :-----------  | :------- | :--------------------------------------------------------------- |
 | `searchTerm`  | `string` | **Required**. the query string for user's search                 |
 | `count`       | `number` | **Required**. the number of news articles to return in search    |
+
+
+[Back To The Top](#api-proxy-server)
 
 
 #### POST - Create Stripe Payment Intent
@@ -228,6 +236,103 @@ Production Base URL - [https://api-proxy-server-6xbe.onrender.com/api/v1](https:
 
 
 [Back To The Top](#api-proxy-server)
+
+
+#### GET top Global tracks
+
+```http
+  GET /spotify/top_200_tracks/${date}
+```
+
+| Parameter     | Type     | Description                                                      |
+| :-----------  | :------- | :--------------------------------------------------------------- |
+| `date`        | `string` | **Required**. the last Thursday's date from current date         |
+
+
+[Back To The Top](#api-proxy-server)
+
+
+#### GET top tracks by Monthly Listeners
+
+```http
+  GET /spotify/top_20_by_monthly_listeners
+```
+
+
+[Back To The Top](#api-proxy-server)
+
+
+#### GET top tracks by Followers
+
+```http
+  GET /spotify/top_20_by_followers
+```
+
+
+[Back To The Top](#api-proxy-server)
+
+
+#### GET single track details
+
+```http
+  GET /spotify/tracks/${songId}
+```
+
+| Parameter     | Type     | Description                                                      |
+| :-----------  | :------- | :--------------------------------------------------------------- |
+| `songId`      | `string` | **Required**. Spotify ID of the required song                    |
+
+
+[Back To The Top](#api-proxy-server)
+
+
+#### GET single track's lyrics details
+
+```http
+  GET /spotify/track_lyrics/${songId}
+```
+
+| Parameter     | Type     | Description                                                      |
+| :-----------  | :------- | :--------------------------------------------------------------- |
+| `songId`      | `string` | **Required**. Spotify ID of the required song                    |
+
+
+[Back To The Top](#api-proxy-server)
+
+
+#### GET artist's overview details
+
+```http
+  GET /spotify/artist_overview/${artistId}
+```
+
+| Parameter     | Type     | Description                                                      |
+| :-----------  | :------- | :--------------------------------------------------------------- |
+| `artistId`    | `string` | **Required**. Spotify ID of the required artist                  |
+
+
+[Back To The Top](#api-proxy-server)
+
+
+#### GET top tracks by rank
+
+```http
+  GET /spotify/chart/tracks/top
+```
+
+
+[Back To The Top](#api-proxy-server)
+
+
+#### GET top artists by rank
+
+```http
+  GET /spotify/chart/artists/top
+```
+
+
+[Back To The Top](#api-proxy-server)
+
 
 ---
 
