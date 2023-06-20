@@ -64,14 +64,13 @@ Start the server
 - [Youtube API](https://developers.google.com/youtube/v3)
 - [Clarifai API](https://www.clarifai.com/)
 - [Unsplash API](https://unsplash.com/)
-- [Travel Advisor Rapid API](https://rapidapi.com/apidojo/api/travel-advisor/)
-- [Open Weather Map Rapid API](https://rapidapi.com/community/api/open-weather-map/)
 - [Coinranking Rapid API](https://rapidapi.com/Coinranking/api/coinranking1)
 - [Bing News Search Rapid API](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1)
 - [Stripe API](https://stripe.com/docs/api)
 - [Spotify API](https://rapidapi.com/airaudoeduardo/api/spotify81)
 - [Spotify Scraper API](https://rapidapi.com/DataFanatic/api/spotify-scraper)
 - [Spotify API](https://rapidapi.com/Glavier/api/spotify23)
+- [Cars API](https://rapidapi.com/apininjas/api/cars-by-api-ninjas)
 
 
 [Back To The Top](#api-proxy-server)
@@ -93,6 +92,9 @@ Production Base URL - [https://api-proxy-server-6xbe.onrender.com/api/v1](https:
 | `term`      | `string` | **Required**. the search term of images to fetch  |
 
 
+[Back To The Top](#api-proxy-server)
+
+
 #### GET videos
 
 ```http
@@ -102,6 +104,9 @@ Production Base URL - [https://api-proxy-server-6xbe.onrender.com/api/v1](https:
 | Parameter   | Type     | Description                                       |
 | :---------- | :------- | :------------------------------------------------ |
 | `term`      | `string` | **Required**. the search term of videos to fetch  |
+
+
+[Back To The Top](#api-proxy-server)
 
 
 #### POST - Detect Face
@@ -115,6 +120,9 @@ Production Base URL - [https://api-proxy-server-6xbe.onrender.com/api/v1](https:
 | `term`      | `string` | **Required**. the URL of image to detect          |
 
 
+[Back To The Top](#api-proxy-server)
+
+
 #### POST - Find Closest Celebrity Match
 
 ```http
@@ -126,6 +134,9 @@ Production Base URL - [https://api-proxy-server-6xbe.onrender.com/api/v1](https:
 | `term`      | `string` | **Required**. the URL of image to detect          |
 
 
+[Back To The Top](#api-proxy-server)
+
+
 #### GET movies
 
 ```http
@@ -135,33 +146,6 @@ Production Base URL - [https://api-proxy-server-6xbe.onrender.com/api/v1](https:
 | Parameter   | Type     | Description                                       |
 | :---------- | :------- | :------------------------------------------------ |
 | `request`    | `string` | **Required**. the genre of movies to fetch       |
-
-
-#### GET place details
-
-```http
-  GET /traveladvisor/place?list_option=${list_option}&bl_latitude=${bl_latitude}&tr_latitude=${tr_latitude}&bl_longitude=${bl_longitude}&tr_longitude=${tr_longitude}
-```
-
-| Parameter        | Type     | Description                                                                         |
-| :----------      | :------- | :---------------------------------------------------------------------------------- |
-| `list_option`    | `string` | **Required**. can be one of three place type - Restaurants, Hotels and Attractions  |
-| `bl_latitude`    | `number` | **Required**. latitude value of bottom left boundary in google maps                 |
-| `tr_latitude`    | `number` | **Required**. latitude value of top right boundary in google maps                   |
-| `bl_longitude`   | `number` | **Required**. longitude value of bottom left boundary in google maps                |
-| `tr_longitude`   | `number` | **Required**. longitude value of top right boundary in google maps                  |
-
-
-#### GET weather
-
-```http
-  GET /openweather/find?lat=${lat}&lng=${lng}
-```
-
-| Parameter   | Type     | Description                                       |
-| :---------- | :------- | :------------------------------------------------ |
-| `lat`       | `number` | **Required**. the latitude value of the place     |
-| `lng`       | `number` | **Required**. the longitude value of the place    |
 
 
 [Back To The Top](#api-proxy-server)
@@ -329,6 +313,25 @@ Production Base URL - [https://api-proxy-server-6xbe.onrender.com/api/v1](https:
 ```http
   GET /spotify/chart/artists/top
 ```
+
+
+[Back To The Top](#api-proxy-server)
+
+
+#### GET all cars details
+
+
+```http
+  GET /cars/find?make=${manufacturer}&year=${year}&model=${model}&fuel=${fuel}&limit=${limit}
+```
+
+| Parameter     | Type     | Description                                                      |
+| :-----------  | :------- | :--------------------------------------------------------------- |
+| `manufacturer`| `string` | Name of the manufacturer of the car                              |
+| `model`       | `string` | Name of the model of the car                                     |
+| `year`        | `number` | Year when the car was manufactured                               |
+| `fuel`        | `string` | Fuel type of the car                                             |
+| `limit`       | `number` | Number of results to get in a single API call                    |
 
 
 [Back To The Top](#api-proxy-server)
